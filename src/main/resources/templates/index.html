@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Jrebel & JetBrains License Server</title>
+
+
+</head>
+<body>
+<h3>使用说明（Instructions for use）</h3>
+<hr/>
+
+<h1>Hello，此地址是 Jrebel & JetBrains License Server!</h1>
+<p>JetBrains许可服务器激活地址: <span th:text="${licenseUrl}"> ss </span></p>
+<p>JetBrains激活地址是: <span style='color:red' th:text="${licenseUrl}+'/'">ss</span></p>
+
+<p>JRebel 7.1 及旧版本激活地址: <span style='color:red' th:text="${licenseUrl}+'/{tokenname}'"></span> (任意邮箱) </p>
+<p>JRebel 2018.1+ 版本激活地址: <span style='color:red' th:text="${licenseUrl}+'/'+${uuid}"></span> (任意邮箱) </p>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+
+spring:
+  thymeleaf:
+    suffix: .html
+    mode: HTML
+    prefix: classpath:/templates/
+    cache: false
+    encoding: UTF-8
+
+
+#调试或者输出日志
+logging:
+  file:
+    name: logs/jrebel.log
+
+#debug: true
