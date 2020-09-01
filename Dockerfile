@@ -29,7 +29,7 @@ RUN set -xe \
 
 
 #默认的启动命令
-ENV ENTRYPOINT="nohup java -Dfile.encoding=UTF-8 -Xmx1000m -Xms600m -Duser.timezone=GMT+8 -jar $JAR_FILE/$FILE_NAME"
+ENV ENTRYPOINT="nohup java -Dfile.encoding=UTF-8 -Xmx300m -Xms100m -Duser.timezone=GMT+8 -jar $JAR_FILE/$FILE_NAME"
 
 #创建启动脚本
 RUN set -xe \
