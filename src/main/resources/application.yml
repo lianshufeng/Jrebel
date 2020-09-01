@@ -11,7 +11,7 @@ spring:
     encoding: UTF-8
 
 
-#µ÷ÊÔ»òÕßÊä³öÈÕÖ¾
+#è°ƒè¯•æˆ–è€…è¾“å‡ºæ—¥å¿—
 logging:
   file:
     name: logs/jrebel.log

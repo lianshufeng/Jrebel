@@ -14,7 +14,7 @@ public class IndexController {
 
     @RequestMapping({"/", ""})
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        String licenseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+        String licenseUrl = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":" + request.getServerPort());
         return new ModelAndView("index", new HashMap<String, Object>() {{
             put("licenseUrl", licenseUrl);
             put("uuid", UUID.randomUUID().toString());
