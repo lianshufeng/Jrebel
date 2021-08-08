@@ -1,8 +1,8 @@
-package top.dzurl.jrebel.core.service;
+package com.github.jrebel.core.service;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
-import top.dzurl.jrebel.core.util.RsaSign;
+import com.github.jrebel.core.util.RsaSign;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

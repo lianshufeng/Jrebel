@@ -1,4 +1,4 @@
-package top.dzurl.jrebel.core.util.JrebelUtil;
+package com.github.jrebel.core.util.JrebelUtil;
 
 
 import org.apache.commons.lang3.StringUtils;

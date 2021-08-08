@@ -1,4 +1,4 @@
-package top.dzurl.jrebel.core.util;
+package com.github.jrebel.core.util;
 
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Primitive;

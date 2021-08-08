@@ -1,9 +1,9 @@
-package top.dzurl.jrebel.core.service;
+package com.github.jrebel.core.service;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
-import top.dzurl.jrebel.core.util.JrebelUtil.JrebelSign;
-import top.dzurl.jrebel.core.util.JsonUtil;
+import com.github.jrebel.core.util.JrebelUtil.JrebelSign;
+import com.github.jrebel.core.util.JsonUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

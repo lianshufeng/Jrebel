@@ -1,4 +1,4 @@
-package top.dzurl.jrebel.core.controller;
+package com.github.jrebel.core.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

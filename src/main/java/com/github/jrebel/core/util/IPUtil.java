@@ -1,4 +1,4 @@
-package top.dzurl.jrebel.core.util;
+package com.github.jrebel.core.util;
 
 import org.springframework.util.StringUtils;
 

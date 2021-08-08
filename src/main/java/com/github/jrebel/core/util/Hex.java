@@ -1,4 +1,4 @@
-package top.dzurl.jrebel.core.util;
+package com.github.jrebel.core.util;
 
 public class Hex {
 	public static String bytesToHexString(byte[] src){   

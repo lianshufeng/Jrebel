@@ -1,5 +1,5 @@
 #依赖镜像
-FROM registry.cn-chengdu.aliyuncs.com/1s/maven
+FROM lianshufeng/maven
 MAINTAINER lianshufeng <251708339@qq.com>
 
 
@@ -13,6 +13,7 @@ ARG JAR_FILE="/opt/jar"
 
 #下载源码
 RUN set -xe \
+	&& yum install -y git \
 	&& source /etc/profile \
 	&& cd /tmp/ \
 	&& git clone $GIT_URL \

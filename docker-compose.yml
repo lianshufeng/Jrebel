@@ -2,7 +2,10 @@ version: "3"
 
 services:
   springboot:
-    image: registry.cn-chengdu.aliyuncs.com/1s/jrebel
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: lianshufeng/jrebel
     ports:
       - "8080:8080"
     working_dir: /opt/jar
