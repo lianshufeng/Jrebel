@@ -17,7 +17,7 @@ RUN set -xe \
 	&& cd /tmp/$GIT_NAME \
 	&& mvn package \
 	&& mkdir -p $JAR_FILE \
-	&& cp /tmp/$GIT_NAME/target/$FILE_NAME $JAR_FILE/$FILE_NAME 
+	&& cp /tmp/$GIT_NAME/target/$FILE_NAME $JAR_FILE/$FILE_NAME \
 	
 	#刷新环境变量
 	&& source /etc/profile 
