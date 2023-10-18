@@ -1,12 +1,12 @@
 package com.github.jrebel.core.service;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import com.github.jrebel.core.util.JrebelUtil.JrebelSign;
 import com.github.jrebel.core.util.JsonUtil;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @Service

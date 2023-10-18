@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>3.1.4</version>
         <relativePath/>
     </parent>
 
 
-    <groupId>top.dzurl</groupId>
+    <groupId>com.github</groupId>
     <artifactId>jrebel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jrebel</name>
@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>

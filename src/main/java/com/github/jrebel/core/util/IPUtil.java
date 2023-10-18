@@ -1,8 +1,8 @@
 package com.github.jrebel.core.util;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 取ip的工具

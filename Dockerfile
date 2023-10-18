@@ -1,5 +1,5 @@
 #编译环境
-FROM lianshufeng/maven as build
+FROM lianshufeng/maven:jdk17 as build
 MAINTAINER lianshufeng <251708339@qq.com>
 
 ARG GIT_URL="https://github.com/lianshufeng/Jrebel.git"
