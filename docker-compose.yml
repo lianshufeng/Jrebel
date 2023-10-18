@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: lianshufeng/jrebel
     environment:
-      licenseUrl: http://42.193.18.168:8088
+      licenseUrl: 42.193.18.168:8088
     ports:
       - "8080:8080"
     working_dir: /opt/jar

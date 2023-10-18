@@ -8,15 +8,15 @@
 <hr/>
 
 <h1>Hello，此地址是 Jrebel License Server!</h1>
-<p>JRebel 激活地址: <span id="span" style='color:red' th:text="${licenseUrl}+'/'+${uuid}"></span> (任意邮箱) </p>
+<p>JRebel 激活地址: <span id="span" style='color:red' th:text="${protocol} + ${licenseUrl}+'/'+${uuid}"></span> (任意邮箱) </p>
 <h1>JRebel 2023+ 的版本,请关闭idea，请拷贝到命令提示符中执行 </h1>
 <p>
     curl https://register.jpy.wang/ReRegister/src/main/java/jrebel/JrebelMain.java -o tmp.java && java tmp.java && del tmp.java
 </p>
 
-<script>
+<!--<script>
     document.getElementById('span').textContent = document.location.protocol+document.getElementById('span').textContent;
-</script>
+</script>-->
 
 </body>
 
