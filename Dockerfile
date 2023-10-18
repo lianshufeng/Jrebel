@@ -24,7 +24,7 @@ RUN set -xe \
 
 
 #运行环境
-FROM lianshufeng/springboot
+FROM lianshufeng/springboot:jdk17
 ARG FILE_NAME="jrebel-0.0.1-SNAPSHOT.jar"
 ARG JAR_FILE="/opt/jar"
 COPY --from=build $JAR_FILE/$FILE_NAME $JAR_FILE/$FILE_NAME 
