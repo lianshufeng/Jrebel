@@ -1,11 +1,11 @@
 package com.github.jrebel.core.service;
 
+import com.github.jrebel.core.util.jrebel.JrebelSign;
+import com.github.jrebel.core.util.JsonUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
-import com.github.jrebel.core.util.JrebelUtil.JrebelSign;
-import com.github.jrebel.core.util.JsonUtil;
 
 import java.util.Map;
 
@@ -31,29 +31,31 @@ public class JrebelService {
             validFrom = clientTime;
             validUntil = String.valueOf(clinetTimeUntil);
         }
-        String jsonStr = "{\n" +
-                "    \"serverVersion\": \"3.2.4\",\n" +
-                "    \"serverProtocolVersion\": \"1.1\",\n" +
-                "    \"serverGuid\": \"a1b4aea8-b031-4302-b602-670a990272cb\",\n" +
-                "    \"groupType\": \"managed\",\n" +
-                "    \"id\": 1,\n" +
-                "    \"licenseType\": 1,\n" +
-                "    \"evaluationLicense\": false,\n" +
-                "    \"signature\": \"OJE9wGg2xncSb+VgnYT+9HGCFaLOk28tneMFhCbpVMKoC/Iq4LuaDKPirBjG4o394/UjCDGgTBpIrzcXNPdVxVr8PnQzpy7ZSToGO8wv/KIWZT9/ba7bDbA8/RZ4B37YkCeXhjaixpmoyz/CIZMnei4q7oWR7DYUOlOcEWDQhiY=\",\n" +
-                "    \"serverRandomness\": \"H2ulzLlh7E0=\",\n" +
-                "    \"seatPoolType\": \"standalone\",\n" +
-                "    \"statusCode\": \"SUCCESS\",\n" +
-                "    \"offline\": " + String.valueOf(offline) + ",\n" +
-                "    \"validFrom\": " + validFrom + ",\n" +
-                "    \"validUntil\": " + validUntil + ",\n" +
-                "    \"company\": \"Administrator\",\n" +
-                "    \"orderId\": \"\",\n" +
-                "    \"zeroIds\": [\n" +
-                "        \n" +
-                "    ],\n" +
-                "    \"licenseValidFrom\": 1490544001000,\n" +
-                "    \"licenseValidUntil\": 1691839999000\n" +
-                "}";
+        String jsonStr = """
+                {
+                        "serverVersion": "3.2.4",
+                        "serverProtocolVersion": "1.1",
+                        "serverGuid": "a1b4aea8-b031-4302-b602-670a990272cb",
+                        "groupType": "managed",
+                        "id": 1,
+                        "licenseType": 1,
+                        "evaluationLicense": false,
+                        "signature": "OJE9wGg2xncSb+VgnYT+9HGCFaLOk28tneMFhCbpVMKoC/Iq4LuaDKPirBjG4o394/UjCDGgTBpIrzcXNPdVxVr8PnQzpy7ZSToGO8wv/KIWZT9/ba7bDbA8/RZ4B37YkCeXhjaixpmoyz/CIZMnei4q7oWR7DYUOlOcEWDQhiY=",
+                        "serverRandomness": "H2ulzLlh7E0=",
+                        "seatPoolType": "standalone",
+                        "statusCode": "SUCCESS",
+                        "offline": %s,
+                        "validFrom": %s,
+                        "validUntil": %s,
+                        "company": "Administrator",
+                        "orderId": "",
+                        "zeroIds": [
+                           \s
+                        ],
+                        "licenseValidFrom": 1490544001000,
+                        "licenseValidUntil": %s
+                    }
+                """.formatted(offline, validFrom, validUntil, System.currentTimeMillis());
 
         if (clientRandomness == null || username == null || guid == null) {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
@@ -74,18 +76,20 @@ public class JrebelService {
     public void jrebelValidateHandler(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("application/json; charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
-        String jsonStr = "{\n" +
-                "    \"serverVersion\": \"3.2.4\",\n" +
-                "    \"serverProtocolVersion\": \"1.1\",\n" +
-                "    \"serverGuid\": \"a1b4aea8-b031-4302-b602-670a990272cb\",\n" +
-                "    \"groupType\": \"managed\",\n" +
-                "    \"statusCode\": \"SUCCESS\",\n" +
-                "    \"company\": \"Administrator\",\n" +
-                "    \"canGetLease\": true,\n" +
-                "    \"licenseType\": 1,\n" +
-                "    \"evaluationLicense\": false,\n" +
-                "    \"seatPoolType\": \"standalone\"\n" +
-                "}\n";
+        String jsonStr = """
+                {
+                    "serverVersion": "3.2.4",
+                    "serverProtocolVersion": "1.1",
+                    "serverGuid": "a1b4aea8-b031-4302-b602-670a990272cb",
+                    "groupType": "managed",
+                    "statusCode": "SUCCESS",
+                    "company": "Administrator",
+                    "canGetLease": true,
+                    "licenseType": 1,
+                    "evaluationLicense": false,
+                    "seatPoolType": "standalone"
+                }
+                """;
         response.getWriter().print(JsonUtil.toJson(JsonUtil.toObject(jsonStr, Object.class)));
     }
 
@@ -94,22 +98,23 @@ public class JrebelService {
         response.setContentType("application/json; charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
         String username = request.getParameter("username");
-        String jsonStr = "{\n" +
-                "    \"serverVersion\": \"3.2.4\",\n" +
-                "    \"serverProtocolVersion\": \"1.1\",\n" +
-                "    \"serverGuid\": \"a1b4aea8-b031-4302-b602-670a990272cb\",\n" +
-                "    \"groupType\": \"managed\",\n" +
-                "    \"statusCode\": \"SUCCESS\",\n" +
-                "    \"msg\": null,\n" +
-                "    \"statusMessage\": null\n" +
-                "}\n";
+        String jsonStr = """
+                {
+                    "serverVersion": "3.2.4",
+                    "serverProtocolVersion": "1.1",
+                    "serverGuid": "a1b4aea8-b031-4302-b602-670a990272cb",
+                    "groupType": "managed",
+                    "statusCode": "SUCCESS",
+                    "msg": null,
+                    "statusMessage": null
+                }
+                """;
         Map map = JsonUtil.toObject(jsonStr, Map.class);
         if (username != null) {
             map.put("company", username);
         }
         String body = JsonUtil.toJson(map);
         response.getWriter().print(body);
-
     }
 
 

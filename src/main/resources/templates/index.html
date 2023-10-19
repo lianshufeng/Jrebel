@@ -2,21 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Jrebel License Server</title>
+    <title>Jrebel 激活服务</title>
+    <meta name="description" content="支持最新的jrebel激活， 兼容2023以后的版本"/>
+    <meta name="keywords" content="jrebel 2023+ , jrebel 2023.4.0 "/>
 <body>
+
+
 <h3>使用说明（Instructions for use）</h3>
 <hr/>
 
-<h1>Hello，此地址是 Jrebel License Server!</h1>
-<p>JRebel 激活地址: <span id="span" style='color:red' th:text="${protocol} + ${licenseUrl}+'/'+${uuid}"></span> (任意邮箱) </p>
-<h1>JRebel 2023+ 的版本,请关闭idea，请拷贝到命令提示符中执行 </h1>
+<h1>Jrebel License Server! (兼容 2023.4.0 +)</h1>
 <p>
-    curl https://register.jpy.wang/ReRegister/src/main/java/jrebel/JrebelMain.java -o tmp.java && java tmp.java && del tmp.java
+    JRebel 激活地址: <span id="span" style='color:red' th:text="${protocol} + ${licenseUrl}+'/'+${uuid}"></span>
+    JRebel 激活邮箱: <span id="span" style='color:red' th:text="${mail}"></span>
 </p>
 
-<!--<script>
-    document.getElementById('span').textContent = document.location.protocol+document.getElementById('span').textContent;
-</script>-->
+<h1>JRebel 无限试用，请拷贝到命令提示符中执行 </h1>
+<p>
+    curl https://register.jpy.wang/ReRegister/src/main/java/jrebel/JrebelMain.java -o tmp.java && java tmp.java && del
+    tmp.java
+</p>
+
 
 </body>
 

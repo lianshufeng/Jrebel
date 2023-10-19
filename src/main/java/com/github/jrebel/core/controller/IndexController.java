@@ -1,5 +1,6 @@
 package com.github.jrebel.core.controller;
 
+import com.github.jrebel.core.util.RandomUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 @RestController
@@ -23,6 +25,7 @@ public class IndexController {
             put("licenseUrl", licenseUrl);
             put("protocol", protocol);
             put("uuid", UUID.randomUUID().toString());
+            put("mail", "%s@qq.com".formatted(RandomUtil.next(10000, 999999999)));
         }});
     }
 

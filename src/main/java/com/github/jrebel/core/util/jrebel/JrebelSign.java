@@ -1,4 +1,4 @@
-package com.github.jrebel.core.util.JrebelUtil;
+package com.github.jrebel.core.util.jrebel;
 
 
 import org.apache.commons.lang3.StringUtils;
