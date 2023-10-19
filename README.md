@@ -2,4 +2,7 @@
 
 A license server for Jrebel & JetBrains products, it also support JRebel for Android and XRebel.
 
-# 支持最新
+### latest
+````shell
+jrebel 2023.4.0 +
+````
