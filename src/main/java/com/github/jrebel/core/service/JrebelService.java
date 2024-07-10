@@ -20,14 +20,15 @@ public class JrebelService {
         String clientRandomness = request.getParameter("randomness");
         String username = request.getParameter("username");
         String guid = request.getParameter("guid");
-        boolean offline = Boolean.parseBoolean(request.getParameter("offline"));
+//        boolean offline = Boolean.parseBoolean(request.getParameter("offline"));
+        final boolean offline = true;
         String validFrom = "null";
         String validUntil = "null";
         if (offline) {
             String clientTime = request.getParameter("clientTime");
             String offlineDays = request.getParameter("offlineDays");
             //long clinetTimeUntil = Long.parseLong(clientTime) + Long.parseLong(offlineDays)  * 24 * 60 * 60 * 1000;
-            long clinetTimeUntil = Long.parseLong(clientTime) + 180L * 24 * 60 * 60 * 1000;
+            long clinetTimeUntil = Long.parseLong(clientTime) + 30L * 24 * 60 * 60 * 1000;
             validFrom = clientTime;
             validUntil = String.valueOf(clinetTimeUntil);
         }
@@ -55,7 +56,7 @@ public class JrebelService {
                         "licenseValidFrom": 1490544001000,
                         "licenseValidUntil": %s
                     }
-                """.formatted(offline, validFrom, validUntil, System.currentTimeMillis());
+                """.formatted(offline, validFrom, validUntil, System.currentTimeMillis() );
 
         if (clientRandomness == null || username == null || guid == null) {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
